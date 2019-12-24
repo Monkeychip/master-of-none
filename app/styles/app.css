@@ -32,7 +32,9 @@ body {
 .item-a {
   width: 90vw;
   grid-area: background-image;
-  background-color: #57cda0;
+  background: url(../assets/images/wave3.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
   display: flex;
   justify-content: center;
   padding-top: 5rem;
@@ -106,13 +108,12 @@ body {
 
   color: white;
   font-weight: bold;
-  background-color: #30aba5;
 }
 
-.protein { background-color: #57cda0;}
+.protein { background-color: #ca2171;}
 .quotes { background-color: #5e48ef;}
 .exercise { background-color: #3190e5;}
-.captains-log { background-color: #ca2171;}
+.captains-log { background-color: #57cda0;}
 
 @media only screen and (max-width: 600px) {
   .avatar-img {
@@ -125,10 +126,9 @@ body {
   .item-a {
     width: 90vw;
     grid-area: background-image;
-    background-color: #57cda0;
     display: flex;
     justify-content: center;
-    padding-top: 3rem;
+    padding-top: 4rem;
   }
   .sub-item {
     width: 9rem;
@@ -137,5 +137,8 @@ body {
   }
   .item-b {
     margin-top:-5.5rem;
+  }
+  .container {
+    grid-template-columns: 48% 2% 48%;
   }
 }
