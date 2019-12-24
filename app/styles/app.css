@@ -15,37 +15,54 @@ button {
   font-family: 'Lato', 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
   line-height: 1.5;
 }
+html, body {
+  height: 100%;
+}
+
+html {
+  display: table;
+  margin: auto;
+}
+
+body {
+  display: table-cell;
+  vertical-align: middle;
+}
 /* grid container, .item are grid items */
 .item-a {
-  width: 100%;
+  width: 90vw;
   grid-area: background-image;
   background-color: #57cda0;
   display: flex;
   justify-content: center;
-  padding-top: 20px;
+  padding-top: 5rem;
 }
 
 .item-b {
   grid-area: avatar;
   align-self: start;
-  margin-top:-2.5rem;
+  margin-top:-7.5rem;
 }
 .item-c {
-  grid-area: none-1
+  grid-area: none-1;
+  align-self: center;
 }
 .item-d {
-  grid-area: none-2
+  grid-area: none-2;
+  align-self: center;
 }
 .item-e {
-  grid-area: none-3
+  grid-area: none-3;
+  align-self: center;
 }
 .item-f {
-  grid-area: none-4
+  grid-area: none-4;
+  align-self: center;
 }
 
 .container {
   display: grid;
-  grid-template-columns: 38% auto 38%;
+  grid-template-columns: 45% 10% 45%;
   grid-template-rows: 35% [header] 15% 25% 25%;
   grid-template-areas: 
     "background-image background-image background-image"
@@ -54,12 +71,10 @@ button {
     "none-3 . none-4";
   justify-content: center;
   justify-items: center;
-  padding: 2em;
   border-radius: 0.5em;
+  width:90vw;
+  height:90vh;
   box-shadow: 0 0.25em 1.5em 0.25em rgba(0, 0, 0, 0.1);
-  margin: auto;
-  width: 80vw;
-  height: 90vh;
   background-color: #fdfdfd;
 }
 
@@ -69,14 +84,58 @@ button {
   font-weight: normal;
 }
 
-.avatar-img{
+.avatar-img {
   border-radius: 50%;
-  width: 10rem;
-  height: 10rem;
+  width: 15rem;
+  height: 15rem;
   text-align: center;
   line-height: 60px;
 
   color: white;
   font-weight: bold;
   background-color: #30aba5;
+}
+
+.sub-item {
+  border-radius: 10%;
+  width: 10rem;
+  height: 10rem;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 60px;
+
+  color: white;
+  font-weight: bold;
+  background-color: #30aba5;
+}
+
+.protein { background-color: #57cda0;}
+.quotes { background-color: #5e48ef;}
+.exercise { background-color: #3190e5;}
+.captains-log { background-color: #ca2171;}
+
+@media only screen and (max-width: 600px) {
+  .avatar-img {
+    width: 10rem;
+    height: 10rem;
+  }
+  .short-description {
+    font-size: 1.5rem;
+  }
+  .item-a {
+    width: 90vw;
+    grid-area: background-image;
+    background-color: #57cda0;
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+  }
+  .sub-item {
+    width: 9rem;
+    height: 9rem;
+    line-height: 30px;
+  }
+  .item-b {
+    margin-top:-5.5rem;
+  }
 }
