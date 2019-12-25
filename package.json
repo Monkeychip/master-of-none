@@ -12,7 +12,7 @@
   },
   "scripts": {
     "build": "ember build",
-    "lint:hbs": "ember-template-lint .",
+    "lint:hbs": "ember-template-lint app/**/* lib/**/*",
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "ember test"
@@ -38,8 +38,9 @@
     "ember-cli-htmlbars": "^3.0.1",
     "ember-cli-htmlbars-inline-precompile": "^2.1.0",
     "ember-cli-inject-live-reload": "^1.8.2",
+    "ember-cli-sass": "^10.0.1",
     "ember-cli-sri": "^2.1.1",
-    "ember-cli-template-lint": "^1.0.0-beta.1",
+    "ember-cli-template-lint": "^1.0.0-beta.3",
     "ember-cli-uglify": "^2.1.0",
     "ember-data": "~3.12.0",
     "ember-export-application-global": "^2.0.0",
@@ -53,9 +54,14 @@
     "eslint-plugin-ember": "^6.2.0",
     "eslint-plugin-node": "^9.0.1",
     "loader.js": "^4.7.0",
-    "qunit-dom": "^0.8.4"
+    "qunit-dom": "^0.8.4",
+    "sass": "^1.24.0"
   },
   "engines": {
     "node": "8.* || >= 10.*"
+  },
+  "dependencies": {
+    "@glimmer/component": "^1.0.0",
+    "@glimmer/tracking": "^1.0.0"
   }
 }

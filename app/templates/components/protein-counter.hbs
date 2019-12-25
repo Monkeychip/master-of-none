@@ -1,0 +1,24 @@
+<div class="protein-item-c">
+  <div class="beautified-form-input">
+    <span class="purple-chunk">gm</span>
+    <Input @id="protein-amount" @type="number" @value={{this.singleProteinAmount}} />
+  </div>
+  <button 
+    type="submit"
+    class="btn-submit btn-purple"
+    {{on "click" (fn this.increment this.singleProteinAmount)}}
+  >
+    Submit
+  </button>
+</div>
+
+<div class="protein-item-d">
+  <p>come chart goes here</p>
+</div>
+
+<div class="protein-item-e">
+  <div>
+    <h3>Total for Today: </h3>
+    <p>{{this.count}}</p> 
+  </div>
+</div>

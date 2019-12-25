@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 2275 1045" style="enable-background:new 0 0 2275 1045;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:#424646;}
+	.st2{fill:url(#SVGID_2_);}
+</style>
+<radialGradient id="SVGID_1_" cx="7235.9194" cy="3711.9851" r="5832.564" fx="7278.2109" fy="6538.8623" gradientTransform="matrix(0.2317 0 0 0.2317 1879.5398 1107.4856)" gradientUnits="userSpaceOnUse">
+	<stop  offset="7.152942e-02" style="stop-color:#8160E4;stop-opacity:0.56"/>
+	<stop  offset="0.1527" style="stop-color:#7C5DE5;stop-opacity:0.6017"/>
+	<stop  offset="0.626" style="stop-color:#664EEC;stop-opacity:0.8447"/>
+	<stop  offset="0.9285" style="stop-color:#5E48EF"/>
+</radialGradient>
+<path class="st0" d="M4664,2670H2448c0-237.1,0-474.2,0-711.2c0-231.3,0-462.5,0-693.8c738.7,0,1477.3,0,2216,0V2670z"/>
+<g id="DRgpFD.tif">
+	
+		<image style="overflow:visible;" width="596" height="496" id="Layer_0_1_" xlink:href="6E58780BDABDDDDE.png"  transform="matrix(1.5141 0 0 1.5141 4304 2810)">
+	</image>
+</g>
+<rect x="4628" y="2087" class="st1" width="0" height="4"/>
+<radialGradient id="SVGID_2_" cx="1127.5055" cy="490" r="1394.1174" fx="1137.6141" fy="1165.689" gradientTransform="matrix(1 0 0 0.8068 0 94.6468)" gradientUnits="userSpaceOnUse">
+	<stop  offset="7.152942e-02" style="stop-color:#8160E4;stop-opacity:0.56"/>
+	<stop  offset="0.1527" style="stop-color:#7C5DE5;stop-opacity:0.6017"/>
+	<stop  offset="0.626" style="stop-color:#664EEC;stop-opacity:0.8447"/>
+	<stop  offset="0.9285" style="stop-color:#5E48EF"/>
+</radialGradient>
+<path class="st2" d="M-36-53v560.1c0,0,648.6-213.1,1086.9,55.4S2095.4,1029.3,2291,1033V-34.5L-36-53z"/>
+</svg>

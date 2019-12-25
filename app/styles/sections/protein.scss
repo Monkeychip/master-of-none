@@ -1,0 +1,90 @@
+@import "../utils/variables.scss";
+
+.back-home {
+  color: white;
+  float: left;
+  padding: 20px;
+}
+
+#protein-hello {
+  color: $purple;
+}
+
+#protein-amount {
+  border-color: $purple;
+  padding-left: 10px;
+}
+
+.protein-item-a {
+  width: 100vw;
+  grid-area: background-image;
+  background: url(../../assets/images/protein-wave2.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: -20px 0px 0px -20px; // to offset padding on container for background image
+}
+
+.protein-item-b {
+  grid-area: hello;
+  margin-top: -100px;
+}
+
+.protein-item-c {
+  grid-area: form;
+}
+
+.protein-item-d {
+  grid-area: graph;
+}
+
+.protein-item-e {
+  grid-area: total;
+}
+
+.protein-container {
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  grid-template-rows: 4fr .5fr 2.5fr 3fr;
+  grid-template-areas: 
+    "background-image background-image"
+    "hello ."
+    "form ."
+    "graph total";
+  justify-content: center;
+  justify-items: left;
+  padding: 20px; // universal padding
+  height: 100vh;
+}
+
+// TODO move eventually to scss mixin or something
+label {
+  color: $dark-grey;
+}
+
+input {
+  border-color: $purple;
+  border-style: solid;
+  border-radius: 0px 30px 30px 0px;
+  border-width: 2px;
+  height: 24px;
+  width: 55vw;
+}
+
+.beautified-form-input {
+  display: flex;
+  align-items: center;
+}
+
+.purple-chunk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 30px;
+  color: white;
+  background-color: $purple;
+  font-size: 12px;
+}

@@ -1,0 +1,27 @@
+$green: #57CDA0;
+$pink: #ca2171;
+$purple: #5e48ef;
+$blue: #3190e5;
+
+$light-grey: #9AA2AD;
+$dark-grey: #464646; 
+
+input {
+  border-style: solid;
+  border-radius: 0px 30px 30px 0px;
+  border-width: 2px;
+  height: 24px;
+  width: 55vw;
+}
+
+.btn-purple {
+  background-color: $purple;
+}
+
+.btn-submit {
+  margin-top: 31px;
+  height: 30px;
+  width: 55vw;
+  color: white;
+  border-radius: 0px 30px 30px 0px;
+}

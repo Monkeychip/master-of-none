@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,300italic,400,700,700italic);
+@import "../utils/variables.scss";
 
 body,
 h1,
@@ -15,27 +16,19 @@ button {
   font-family: 'Lato', 'Open Sans', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
   line-height: 1.5;
 }
-html, body {
-  height: 100%;
-}
-
-html {
-  display: table;
-  margin: auto;
-}
 
 body {
-  display: table-cell;
-  vertical-align: middle;
+  margin: 0px;
 }
 /* grid container, .item are grid items */
 .item-a {
-  width: 90vw;
+  width: 100vw;
   grid-area: background-image;
-  background: url(../assets/images/wave3.svg);
+  background: url(../../assets/images/wave3.svg);
   background-repeat: no-repeat;
   background-size: 100%;
   display: flex;
+  align-items: flex-start;
   justify-content: center;
   padding-top: 5rem;
 }
@@ -65,7 +58,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: 45% 10% 45%;
-  grid-template-rows: 35% [header] 15% 25% 25%;
+  grid-template-rows: 35% 15% 25% 25%;
   grid-template-areas: 
     "background-image background-image background-image"
     ". avatar ."
@@ -73,11 +66,8 @@ body {
     "none-3 . none-4";
   justify-content: center;
   justify-items: center;
-  border-radius: 0.5em;
-  width:90vw;
-  height:90vh;
-  box-shadow: 0 0.25em 1.5em 0.25em rgba(0, 0, 0, 0.1);
-  background-color: #fdfdfd;
+  width:100vw;
+  height:100vh;
 }
 
 .short-description {
@@ -95,7 +85,7 @@ body {
 
   color: white;
   font-weight: bold;
-  background-color: #30aba5;
+  background-color: $green;
 }
 
 .sub-item {
@@ -110,10 +100,10 @@ body {
   font-weight: bold;
 }
 
-.protein { background-color: #ca2171;}
-.quotes { background-color: #5e48ef;}
-.exercise { background-color: #3190e5;}
-.captains-log { background-color: #57cda0;}
+.protein { background-color: $pink;}
+.quotes { background-color: $purple;}
+.exercise { background-color: $blue;}
+.captains-log { background-color: $green;}
 
 @media only screen and (max-width: 600px) {
   .avatar-img {
@@ -123,13 +113,7 @@ body {
   .short-description {
     font-size: 1.5rem;
   }
-  .item-a {
-    width: 90vw;
-    grid-area: background-image;
-    display: flex;
-    justify-content: center;
-    padding-top: 4rem;
-  }
+  
   .sub-item {
     width: 9rem;
     height: 9rem;
