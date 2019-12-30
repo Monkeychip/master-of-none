@@ -7,7 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('proteins');
+  this.route('protein');
 });
 
 export default Router;

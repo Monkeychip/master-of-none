@@ -7,13 +7,24 @@ import { inject as service } from '@ember/service';
 
 export default class Counter extends Component {
   @tracked count = 0; 
-  @service store;
+  @service store; // vs store: service()
   @action
   increment(value) {
-    // creaate record in store on action
-    let previousRecord = this.store.peekRecord('protein', 1);
-    previousRecord ? console.log("true reocrd") : console.log("false no record")
-    this.count = this.count + Number(value);
+    this.count = this.count + Number(value)
+    let updatedTotalProtein = this.count;
+    this.store.findRecord('protein', 3).then(function(value) {
+      value.set('proteinTotal', Number(updatedTotalProtein));
+      record.save();
+    });
+    
+// TODO - do the follow create record if none exist.
+// TODO - on refresh set the default value from local storage
+// TODO - once submit, remove the input value.
+    // let protein = this.store.createRecord('protein', {
+    //   id: 3,
+    //   proteinTotal: this.count,
+    // })
+    // protein.save()
   }
 
 }

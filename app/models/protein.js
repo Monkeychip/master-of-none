@@ -2,7 +2,7 @@ import DS from 'ember-data';
 const { Model, attr } = DS;
 
 export default class Protein extends Model {
-  @attr('number', { defaultValue: 0}) proteinTotal;
+  @attr('number', { defaultValue: 100}) proteinTotal;
 }
 
 // indivdual record of this model might be
