@@ -1,30 +1,35 @@
-import Component from "@glimmer/component";
+import { isBlank } from '@ember/utils';
 import { tracked } from "@glimmer/tracking";
 import { action } from "@ember/object";
+import Component from '@ember/component';
 // need for access to the store
 import { inject as service } from '@ember/service';
 
-
-export default class Counter extends Component {
-  @tracked count = 0; 
-  @service store; // vs store: service()
-  @action
-  increment(value) {
-    this.count = this.count + Number(value)
-    let updatedTotalProtein = this.count;
-    this.store.findRecord('protein', 3).then(function(value) {
-      value.set('proteinTotal', Number(updatedTotalProtein));
-      record.save();
-    });
-    
-// TODO - do the follow create record if none exist.
-// TODO - on refresh set the default value from local storage
-// TODO - once submit, remove the input value.
-    // let protein = this.store.createRecord('protein', {
-    //   id: 3,
-    //   proteinTotal: this.count,
-    // })
-    // protein.save()
+export default Component.extend({
+  count : 0,
+  store: service(),
+  actions: {
+    increment(e) {
+      if (e.keyCode === 13 && !isBlank(e.target.value)){
+          this.store.findRecord('protein', 2)
+            .then(function(totalProtein){
+              totalProtein.set('proteinTotal', e.target.value);
+              totalProtein.save();
+              e.target.value = '';
+            })
+            // this catch doesn't work with the store, unsure why
+            .catch(function(){             
+              this.store.createRecord('protein', {
+                id: 2,
+                proteinTotal: e.target.value
+              })
+              .save()
+              .then(function(){
+                e.target.value = '';
+              })
+            })
+            this.count = this.count + Number(e.target.value)
+        }
+    }
   }
-
-}
+});
