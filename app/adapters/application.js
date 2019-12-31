@@ -1,7 +1,7 @@
-import DS from 'ember-data';
+import FirestoreAdapter from 'emberfire/adapters/firestore';
 
-// export default DS.JSONAPIAdapter.extend({
-// });
-
-// to use local storage
-export { default } from 'ember-local-storage/adapters/local';
+export default FirestoreAdapter.extend({
+    // Uncomment the following lines to enable offline persistence and multi-tab support
+    // enablePersistence: true,
+    // persistenceSettings: { synchronizeTabs: true }
+});

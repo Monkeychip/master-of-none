@@ -1,4 +1,5 @@
 <div class="protein-container">
+  
   <div class="protein-item-a">
     <LinkTo @route="index" class="back-home" href="#">
       {{fa-icon "arrow-left"}}
@@ -9,5 +10,27 @@
     <h1 id="protein-hello">Hello</h1>
     <label>Enter protein amount</label>
   </div>
-  <ProteinCounter />
+
+  <div class="protein-item-c">
+    <div class="beautified-form-input">
+      <span class="purple-chunk">gm</span>
+        <input
+          id="protein-amount"
+          type="number" 
+          onkeydown={{action "increment"}}
+          placeholder="enter protein amount"
+          autofocus
+        >
+    </div>
+  </div>
+  <div class="protein-item-d">
+    <p>some chart goes here</p>
+  </div>
+
+  <div class="protein-item-e">
+    <div>
+      <h3>Total for Today: </h3>
+      <p>{{this.updatedTotal}}</p>
+    </div>
+  </div>
 </div>
