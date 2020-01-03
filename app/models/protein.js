@@ -3,6 +3,5 @@ const { Model, attr } = DS;
 
 export default Model.extend({
   proteinTotal: attr('number'),
-  timestamp: attr('date', { defaultValue() { return new Date()}}),
 });
 
