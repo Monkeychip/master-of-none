@@ -7,9 +7,13 @@ export default Controller.extend({
   init: function() {
     this._super();
 
-    // Checking if need to wipe out date
-    // TODO: change the ID to date (day month year) dynamically so you keep track of records 
-    // AND that's how you change or wipe out the record.
+    // const test = this.store.createRecord('protein', {
+    //   id: 1,
+    //   proteinTotal: 0,
+    //   timestamp: new Date(),
+    // })
+    // test.save();
+
     this.store.findRecord('protein', 1)
     .then( returnedValue => {
       this.set('updatedTotal', returnedValue.proteinTotal)
@@ -18,14 +22,22 @@ export default Controller.extend({
     .then( returnedDate => {
       let rightNow = moment().format("DD")
       if(returnedDate !== rightNow) {
-        console.log("here")
         this.store.findRecord('protein', 1)
         .then( returnedValue => {
-          returnedValue.set('proteinTotal', 0);
+          returnedValue.set('proteinTotal', 20);
           returnedValue.set('timestamp', new Date());
           returnedValue.save();
         })
       }
+    })
+    .catch( error => {
+      const test = this.store.createRecord('protein', {
+        id: 1,
+        proteinTotal: 0,
+        timestamp: new Date(),
+      })
+      test.save();
+      console.log(error," store not created.")
     })
     
   },
