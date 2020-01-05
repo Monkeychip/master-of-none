@@ -12,7 +12,14 @@ export default Controller.extend({
       this.set('proteinTotal', returnedValue.proteinTotal)
     })
     .catch(error => {
-      console.log("no initial protein amount found : ", error)
+      // clear local storage
+      this.store.unloadAll()
+      // create record
+      let newRecord = this.store.createRecord('protein', {
+        id: today,
+        proteinTotal: 0, 
+      });
+      newRecord.save();
       this.set('proteinTotal', 0)
     })
   },
@@ -41,6 +48,9 @@ export default Controller.extend({
             
             // 6. clear value in protein container
             e.target.value = '';
+          })
+          .catch((error) => {
+            console.log(error, "error")
           })
       }
     }
