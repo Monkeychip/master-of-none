@@ -1,0 +1,15 @@
+{{#if session.isAuthenticated}}
+  Logged in as {{session.currentUser.displayName}}
+  <button {{action "logout"}}>Sign out</button>
+  {{outlet}}
+{{else}}
+  <button {{action "login"}}>Sign in with Google</button>
+{{/if}}
+<td class="bold">meep: </td>
+            <td class="user-data-is-authenticated">
+                {{#if session.isAuthenticated}}
+                    ture
+                {{else}}
+                  {{session.isAuthenticated}}
+                {{/if}}
+            </td>

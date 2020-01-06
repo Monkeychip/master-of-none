@@ -31,7 +31,11 @@ module.exports = function(environment) {
       messagingSenderId: "995525414237",
       appId: "1:995525414237:web:4536429d352ee9605f2cb4",
       measurementId: "G-PV6DNP345Q"
-    }
+    },
+
+    torii: {
+      sessionServiceName: 'session'
+    },
   };
 
   if (environment === 'development') {
