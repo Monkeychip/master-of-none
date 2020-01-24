@@ -9,6 +9,7 @@ export default Route.extend({
     let today = moment().format("MMDDYYYY")
     
     return hash({
+      blah: "blah",
       fullRouteModel: this.store.findAll('protein'),
       // proteinForToday: this.store.findRecord('protein', today).then(v => v.proteinTotal),
     })
