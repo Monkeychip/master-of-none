@@ -1,7 +1,7 @@
-import DS from 'ember-data';
+import DS from "ember-data";
 const { Model, attr } = DS;
 
 export default Model.extend({
-  proteinTotal: attr('number'),
+  proteinTotal: attr("number"),
+  proteinAvg: attr("number")
 });
-

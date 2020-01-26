@@ -1,8 +1,8 @@
-{{#if session.isAuthenticated}}
-  Logged in as {{session.currentUser.displayName}}
-  <button {{action "logout"}}>Sign out</button>
+{{!-- {{#if session.isAuthenticated}} --}}
+  {{!-- Logged in as {{session.currentUser.displayName}}
+  <button {{action "logout"}}>Sign out</button> --}}
   {{outlet}}
-{{else}}
+{{!-- {{else}}
   <button {{action "login"}}>Sign in with Google</button>
 {{/if}}
 <td class="bold">meep: </td>
@@ -10,6 +10,6 @@
                 {{#if session.isAuthenticated}}
                     ture
                 {{else}}
-                  {{session.isAuthenticated}}
+                  {{this.model}}
                 {{/if}}
-            </td>
+            </td> --}}
