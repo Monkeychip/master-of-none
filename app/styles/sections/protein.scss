@@ -1,7 +1,7 @@
 @import "../utils/variables.scss";
 
 .back-home {
-  color: white;
+  color: $purple;
   float: left;
   padding: 20px;
 }
@@ -16,11 +16,6 @@
 }
 
 .protein-item-a {
-  width: 100vw;
-  grid-area: background-image;
-  background: url(../../assets/images/protein-wave2.svg);
-  background-repeat: no-repeat;
-  background-size: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -51,12 +46,15 @@
   grid-template-areas: 
     "background-image background-image"
     "hello ."
-    "form ."
+    "form form"
     "graph total";
   justify-content: center;
   justify-items: left;
   padding: 20px; // universal padding
-  height: 100vh;
+  max-width: 430px;
+  height: 680px;
+  margin: 0 auto;
+  box-shadow: -1px 2px 17px 0px rgba(112, 112, 112, 0.36);
 }
 
 // TODO move eventually to scss mixin or something
@@ -70,7 +68,7 @@ input {
   border-radius: 0px 30px 30px 0px;
   border-width: 2px;
   height: 24px;
-  width: 55vw;
+  width: 18rem;
 }
 
 .beautified-form-input {

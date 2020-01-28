@@ -18,15 +18,14 @@ button {
 }
 
 body {
-  margin: 0px;
+  justify-content: center;
+  justify-items: center;
 }
 /* grid container, .item are grid items */
 .item-a {
-  width: 100vw;
   grid-area: background-image;
-  background: url(../../assets/images/wave3.svg);
-  background-repeat: no-repeat;
-  background-size: 100%;
+  // background: url(../../assets/images/wave3.svg);
+  // background-repeat: no-repeat;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -36,7 +35,7 @@ body {
 .item-b {
   grid-area: avatar;
   align-self: start;
-  margin-top:-7.5rem;
+  margin-top:-5.5rem;
 }
 .item-c {
   grid-area: none-1;
@@ -57,7 +56,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: 45% 10% 45%;
+  grid-template-columns: 48% 2% 48%;
   grid-template-rows: 35% 15% 25% 25%;
   grid-template-areas: 
     "background-image background-image background-image"
@@ -66,20 +65,22 @@ body {
     "none-3 . none-4";
   justify-content: center;
   justify-items: center;
-  width:100vw;
-  height:100vh;
+  width: 430px;
+  height: 680px;
+  margin: 0 auto;
+  box-shadow: -1px 2px 17px 0px rgba(112, 112, 112, 0.36);
+  // border: 5px solid red;
 }
 
 .short-description {
   font-size: 1.5rem;
-  color: white;
   font-weight: normal;
 }
 
 .avatar-img {
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
-  width: 15rem;
-  height: 15rem;
   text-align: center;
   line-height: 60px;
 
@@ -89,12 +90,12 @@ body {
 }
 
 .sub-item {
+  width: 9rem;
+  height: 9rem;
+  line-height: 30px;
   border-radius: 10%;
-  width: 10rem;
-  height: 10rem;
   font-size: 1rem;
   text-align: center;
-  line-height: 60px;
 
   color: white;
   font-weight: bold;
@@ -104,25 +105,3 @@ body {
 .quotes { background-color: $purple;}
 .exercise { background-color: $blue;}
 .captains-log { background-color: $green;}
-
-@media only screen and (max-width: 600px) {
-  .avatar-img {
-    width: 10rem;
-    height: 10rem;
-  }
-  .short-description {
-    font-size: 1.5rem;
-  }
-  
-  .sub-item {
-    width: 9rem;
-    height: 9rem;
-    line-height: 30px;
-  }
-  .item-b {
-    margin-top:-5.5rem;
-  }
-  .container {
-    grid-template-columns: 48% 2% 48%;
-  }
-}
