@@ -37,11 +37,12 @@
 
 .protein-item-e {
   grid-area: total;
+  justify-self: center;
 }
 
 .protein-container {
   display: grid;
-  grid-template-columns: 8fr 2fr;
+  grid-template-columns: 4fr 6fr;
   grid-template-rows: 4fr .5fr 2.5fr 3fr;
   grid-template-areas: 
     "background-image background-image"
@@ -51,8 +52,9 @@
   justify-content: center;
   justify-items: left;
   padding: 20px; // universal padding
-  max-width: 430px;
-  height: 680px;
+  max-width: 380px;
+  max-height: 600px;
+  height: 100vh;
   margin: 0 auto;
   box-shadow: -1px 2px 17px 0px rgba(112, 112, 112, 0.36);
 }
@@ -68,7 +70,7 @@ input {
   border-radius: 0px 30px 30px 0px;
   border-width: 2px;
   height: 24px;
-  width: 18rem;
+  width: 15rem;
 }
 
 .beautified-form-input {
@@ -81,8 +83,7 @@ input {
   justify-content: center;
   align-items: center;
   width: 50px;
-  height: 30px;
-  color: white;
-  background-color: $purple;
+  height: 26px;
+  color: $purple;
   font-size: 12px;
 }
