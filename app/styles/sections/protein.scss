@@ -32,7 +32,14 @@
 }
 
 .protein-item-d {
-  grid-area: graph;
+  grid-area: chart;
+  justify-self: center;
+  align-self: center;
+}
+ 
+.protein-item-f {
+  grid-area: avg;
+  justify-self: center;
 }
 
 .protein-item-e {
@@ -43,12 +50,13 @@
 .protein-container {
   display: grid;
   grid-template-columns: 4fr 6fr;
-  grid-template-rows: 4fr .5fr 2.5fr 3fr;
+  grid-template-rows: 2fr .5fr 1fr 2fr 1fr;
   grid-template-areas: 
     "background-image background-image"
     "hello ."
     "form form"
-    "graph total";
+    "chart chart"
+    "avg total";
   justify-content: center;
   justify-items: left;
   padding: 20px; // universal padding

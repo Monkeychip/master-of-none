@@ -1,6 +1,7 @@
 import Controller from "@ember/controller";
 import Moment from "moment";
 import { extendMoment } from "moment-range";
+// import { hash } from "rsvp"; ARG TODO revisit
 
 export default Controller.extend({
   init: function(params) {
@@ -47,12 +48,11 @@ export default Controller.extend({
         let filteredArray = value.filter(element =>
           a.includes(element.get("id"))
         );
-        console.log(a, "lenmgt");
         return filteredArray;
       })
       .then(value => {
         value.forEach(function(v) {
-          proteinAverageArray.push(v.get("proteinTotal"));
+          proteinAverageArray.push(parseInt(v.get("proteinTotal")));
         });
       })
       .then(() => {
@@ -61,6 +61,42 @@ export default Controller.extend({
         }, 0);
         this.set("proteinAvg", parseInt(sum / 7, 0));
       });
+
+    // saving array in store so can use for d3 graph
+    // let meep = [
+    //   {
+    //     id: "02022020",
+    //     proteinTotal: 40
+    //   },
+    //   {
+    //     id: "02012020",
+    //     proteinTotal: 30
+    //   },
+    //   {
+    //     id: "01312020",
+    //     proteinTotal: 32
+    //   },
+    //   {
+    //     id: "01302020",
+    //     proteinTotal: 30
+    //   },
+    //   {
+    //     id: "01292020",
+    //     proteinTotal: 40
+    //   },
+    //   {
+    //     id: "0128020",
+    //     proteinTotal: 130
+    //   },
+    //   {
+    //     id: "01272020",
+    //     proteinTotal: 30
+    //   }
+    // ];
+    //
+    let meep = [1, 2, 3, 4, 5, 6, 7];
+    // Read more about Enurable Arrays and how to map over in d3, problem is the proteinAvreageArray is an ember array
+    this.set("testData", meep);
   },
 
   actions: {
