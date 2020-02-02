@@ -70,6 +70,7 @@
   },
   "dependencies": {
     "@glimmer/component": "^1.0.0",
-    "@glimmer/tracking": "^1.0.0"
+    "@glimmer/tracking": "^1.0.0",
+    "moment-range": "^4.0.2"
   }
 }

@@ -1,11 +1,13 @@
 import Controller from "@ember/controller";
-import moment from "moment";
+import Moment from "moment";
+import { extendMoment } from "moment-range";
 
 export default Controller.extend({
-  init: function() {
+  init: function(params) {
+    const moment = extendMoment(Moment);
     this._super();
     let today = moment().format("MMDDYYYY");
-    let daysArray = [];
+    let proteinAverageArray = [];
 
     // find today's protein count
     this.store
@@ -26,19 +28,35 @@ export default Controller.extend({
         this.set("proteinTotal", 0);
       });
 
+    // set hash so you can use "query"
+    let hash = {};
+    let uid = params.user;
+    if (uid) {
+      hash.user = uid;
+    }
     // find average protein Count
     this.store
-      .query("protein", {
-        limit: 7
+      .query("protein", hash)
+      .then(value => {
+        // ARG TODO: there's got to be a way to clean this up
+        let range = moment.range(moment().subtract(6, "day"), moment());
+        let arrayRange = Array.from(range.by("day"));
+        let a = []; // array of only last 7 days
+
+        arrayRange.forEach(v => a.push(v.format("MMDDYYYY")));
+        let filteredArray = value.filter(element =>
+          a.includes(element.get("id"))
+        );
+        console.log(a, "lenmgt");
+        return filteredArray;
       })
       .then(value => {
         value.forEach(function(v) {
-          console.log(v.get("proteinTotal"), "keep tabs on this");
-          daysArray.push(v.get("proteinTotal"));
+          proteinAverageArray.push(v.get("proteinTotal"));
         });
       })
       .then(() => {
-        let sum = daysArray.reduce((a, c) => {
+        let sum = proteinAverageArray.reduce((a, c) => {
           return a + c;
         }, 0);
         this.set("proteinAvg", parseInt(sum / 7, 0));
